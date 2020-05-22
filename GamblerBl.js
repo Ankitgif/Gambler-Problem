@@ -1,3 +1,13 @@
+/*
+*       @Description -> Simulates a gambler who start with $stake and place fair $1 bets until
+*                       he/she goes broke (i.e. has no money) or reach $goal. Keeps track of the number of
+*                       times he/she wins and the number of bets he/she makes. Run the experiment N
+*                       times, averages the results, and prints them out.
+*       @Parameter  : Number of trials, stake, goal, bet, win, loss
+*       @Return     : Number of times win and loss
+*                     Percentage of win and loss
+*
+*/
 gambler = (noOfTrial, stake, goal, bet, win, loss) => {
     try {
         for (let trial = 0; trial < noOfTrial; trial++) {
