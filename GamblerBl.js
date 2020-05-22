@@ -25,7 +25,7 @@ gambler = (noOfTrial, stake, goal, bet, win, loss) => {             //arrow func
                 win++;                  //if cash reaches to goal then win will be counted till number of trials
             }
             else {
-                loss--;         //if cash not reaches to goal then loss will be counted till number of trials
+                loss++;         //if cash not reaches to goal then loss will be counted till number of trials
             }
         }
 
