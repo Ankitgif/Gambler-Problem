@@ -29,3 +29,7 @@ for(let trial=0;trial<noOfTrial;trial++)
 }
 console.log("Number of time win :"+win);
 console.log("Number of time loss :"+loss);
+let winPercent = win * 100 / noOfTrial;               
+let lossPercent = loss * 100 / noOfTrial;                 
+console.log("Percentage of win : " + winPercent);
+console.log("Percentage of loss : " + lossPercent);
