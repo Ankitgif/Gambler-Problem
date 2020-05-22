@@ -8,34 +8,34 @@
 *                     Percentage of win and loss
 *
 */
-gambler = (noOfTrial, stake, goal, bet, win, loss) => {
+gambler = (noOfTrial, stake, goal, bet, win, loss) => {             //arrow function accepting the required parameters
     try {
-        for (let trial = 0; trial < noOfTrial; trial++) {
-            let cash = stake;
-            while (cash > 0 && cash < goal) {
-                bet++;
-                if (Math.random() < 0.5) {
-                    cash++;
+        for (let trial = 0; trial < noOfTrial; trial++) {           //Loop run till number of trials
+            let cash = stake;                                       //stake assign to cash
+            while (cash > 0 && cash < goal) {           //Loop will run till cash equal to zero or reaches to goal
+                bet++;                                  //bet++ till cash equal to zero or cash reaches to goal
+                if (Math.random() < 0.5) {              //generates random number
+                    cash++;                             //if random number is less than 0.5, cash will be increamented
                 }
                 else {
-                    cash--;
+                    cash--;                     //if random number is more than 0.5, cash will be decreamented
                 }
             }
-            if (cash == goal) {
-                win++;
+            if (cash == goal) {                 //checking cash reaches to goal
+                win++;                  //if cash reaches to goal then win will be counted till number of trials
             }
             else {
-                loss--;
+                loss--;         //if cash not reaches to goal then loss will be counted till number of trials
             }
         }
 
     } catch (error) {
         console.log(error);
     }
-    console.log("Number of time win :" + win);
-    console.log("Number of time loss :" + loss);
-    let winPercent = win * 100 / noOfTrial;
-    let lossPercent = loss * 100 / noOfTrial;
+    console.log("Number of time win :" + win);      //Print number of times wins
+    console.log("Number of time loss :" + loss);    //Print number of times loss 
+    let winPercent = win * 100 / noOfTrial;         //Percentage of win
+    let lossPercent = loss * 100 / noOfTrial;       //Percentage of loss
     console.log("Percentage of win : " + winPercent);
     console.log("Percentage of loss : " + lossPercent);
 }
