@@ -12,23 +12,12 @@ gambler = (noOfTrial, stake, goal, bet, win, loss) => {             //arrow func
     try {
         for (let trial = 0; trial < noOfTrial; trial++) {           //Loop run till number of trials
             let cash = stake;                                       //stake assign to cash
-            while (cash > 0 && cash < goal) {           //Loop will run till cash equal to zero or reaches to goal
-                bet++;                                  //bet++ till cash equal to zero or cash reaches to goal
-                if (Math.random() < 0.5) {              //generates random number
-                    cash++;                             //if random number is less than 0.5, cash will be increamented
-                }
-                else {
-                    cash--;                     //if random number is more than 0.5, cash will be decreamented
-                }
+            while (cash > 0 && cash < goal) {                   //Loop will run till cash equal to zero or reaches to goal
+                bet++;                                                   //bet++ till cash equal to zero or cash reaches to goal
+                let gamblerCheck = (Math.random() < 0.5) ? cash++ : cash--;             //generates random number, if random number is less than 0.5, cash will be increamented else decremented                        
             }
-            if (cash == goal) {                 //checking cash reaches to goal
-                win++;                  //if cash reaches to goal then win will be counted till number of trials
-            }
-            else {
-                loss++;         //if cash not reaches to goal then loss will be counted till number of trials
-            }
+            let gameCheck = (cash == goal) ? win++ : loss++;  //checking cash reaches to goal, if cash reaches to goal then win will be counted till number of trials else loss will be counted 
         }
-
     } catch (error) {
         console.log(error);
     }
